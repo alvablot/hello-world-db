@@ -1,7 +1,9 @@
 const app = require("express")();
 
 const config = require("./knexfile.js");
-const knex = require("knex")(/* Knexfile-config */)
+const knex = require("knex")([config.env.node_ENV])
+
+
 
 app.get("/", (req, res) => {
   res.send(process.env.GREETING);
