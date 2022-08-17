@@ -1,7 +1,7 @@
 const app = require("express")();
 
 const config = require("./knexfile.js");
-const knex = require("knex")([config.env.NODE_ENV])
+const knex = require("knex")(config[process.env.NODE_ENV])
 
 
 
